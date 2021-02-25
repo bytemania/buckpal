@@ -1,5 +1,6 @@
 package com.example.buckpal.account.domain;
 
+import com.example.buckpal.account.domain.fixture.ActivityBuilder;
 import org.example.buckpal.account.domain.Account;
 import org.example.buckpal.account.domain.Activity;
 import org.example.buckpal.account.domain.Money;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -70,15 +72,14 @@ class ActivityTest {
                 LocalDateTime.now(),
                 Money.of(100)));
         assertEquals("ownerAccountId is marked non-null but is null", exception.getMessage());
+    }
 
-        exception = assertThrows(NullPointerException.class, () -> Activity.of(
-                null,
-                Account.AccountId.of(1L),
-                Account.AccountId.of(2L),
-                Account.AccountId.of(3L),
-                LocalDateTime.now(),
-                Money.of(100)));
-        assertEquals("id is marked non-null but is null", exception.getMessage());
+    @DisplayName("Should get the activityId")
+    @Test
+    void getId() {
+        assertEquals(Optional.empty(), ActivityBuilder.builder().withEmptyId().build().getId());
+        Activity.ActivityId activityId = Activity.ActivityId.of(100L);
+        assertEquals(Optional.of(activityId), ActivityBuilder.builder().withId(activityId).build().getId());
     }
 
 }
