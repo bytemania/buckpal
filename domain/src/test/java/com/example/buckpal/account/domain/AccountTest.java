@@ -34,6 +34,12 @@ class AccountTest {
         assertEquals("value is marked non-null but is null", exception.getMessage());
     }
 
+    @DisplayName("of should create a Account")
+    @Test
+    void of() {
+        assertNotNull(Account.of(Money.ZERO, ActivityWindow.create()));
+    }
+
     @DisplayName("of should throw a NullPointerException in case of null balance or null activityWindow")
     @Test
     void of_nullValues_NullPointerException() {
