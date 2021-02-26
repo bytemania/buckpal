@@ -13,9 +13,6 @@
         <module>application</module>
         <module>domain</module>
         <module>common</module>
-        <module>service</module>
-        <module>port</module>
-        <module>port</module>
     </modules>
 
     <properties>
