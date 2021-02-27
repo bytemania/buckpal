@@ -18,7 +18,7 @@ interface ActivityRepository extends JpaRepository<ActivityJpaEntity, Long> {
             @Param("since") LocalDateTime since);
 
     @Query("SELECT SUM(a.amount) " +
-           "FROM ActivityJpaEntity a" +
+           "FROM ActivityJpaEntity a " +
            "WHERE a.targetAccountId = :accountId " +
            "    AND a.ownerAccountId = :accountId " +
            "    AND a.timestamp < :until")

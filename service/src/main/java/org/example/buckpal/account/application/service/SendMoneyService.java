@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @UseCase
 @Transactional
 public class SendMoneyService implements SendMoneyUseCase {
+
     private final LoadAccountPort loadAccountPort;
     private final AccountLock accountLock;
     private final UpdateAccountStatePort updateAccountStatePort;

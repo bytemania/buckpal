@@ -13,6 +13,10 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode(callSuper = false)
 public class SendMoneyCommand extends SelfValidating<SendMoneyCommand> {
 
+    public static SendMoneyCommand of(Account.AccountId sourceAccountId, Account.AccountId targetAccountId, Money money) {
+        return new SendMoneyCommand(sourceAccountId, targetAccountId, money);
+    }
+
     @NotNull
     Account.AccountId sourceAccountId;
 
