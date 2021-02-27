@@ -1,4 +1,4 @@
-package org.example.buckpal.account.application.port.in;
+package org.example.buckpal.account.port.in;
 
 public interface SendMoneyUseCase {
     boolean sendMoney(SendMoneyCommand command);

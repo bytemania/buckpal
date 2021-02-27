@@ -15,9 +15,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 class AccountJpaEntity {
-
     @Id
     @GeneratedValue
     private Long id;
-
 }

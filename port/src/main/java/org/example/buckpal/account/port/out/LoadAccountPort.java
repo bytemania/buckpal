@@ -1,4 +1,4 @@
-package org.example.buckpal.account.application.port.out;
+package org.example.buckpal.account.port.out;
 
 import org.example.buckpal.account.domain.Account;
 
