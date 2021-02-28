@@ -1,7 +1,7 @@
-package org.example.buckpal.account.application.service;
+package org.example.buckpal.account.service;
 
-import org.example.buckpal.account.application.service.exception.ThresholdExceedException;
-import org.example.buckpal.account.application.service.property.MoneyTransferProperties;
+import org.example.buckpal.account.service.exception.ThresholdExceedException;
+import org.example.buckpal.account.service.property.MoneyTransferProperties;
 import org.example.buckpal.account.domain.Account;
 import org.example.buckpal.account.domain.Money;
 import org.example.buckpal.account.port.in.SendMoneyCommand;

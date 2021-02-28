@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 class ActivityJpaEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     @Column

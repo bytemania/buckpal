@@ -1,4 +1,4 @@
-package org.example.buckpal.account.application.service.exception;
+package org.example.buckpal.account.service.exception;
 
 import org.example.buckpal.account.domain.Money;
 

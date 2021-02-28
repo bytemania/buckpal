@@ -3,6 +3,7 @@ package org.example.buckpal.account.adapter.out.persistence;
 import lombok.RequiredArgsConstructor;
 import org.example.buckpal.account.common.PersistenceAdapter;
 import org.example.buckpal.account.domain.Account;
+import org.example.buckpal.account.port.out.AccountLock;
 import org.example.buckpal.account.port.out.LoadAccountPort;
 import org.example.buckpal.account.port.out.UpdateAccountStatePort;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @PersistenceAdapter
-public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccountStatePort {
+public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccountStatePort, AccountLock {
 
     private final AccountRepository accountRepository;
     private final ActivityRepository activityRepository;
@@ -38,5 +39,15 @@ public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccount
 
     private Long orZero(Long value) {
         return value == null ? 0L : value;
+    }
+
+    @Override
+    public void lockAccount(Account.AccountId accountId) {
+        //do nothing
+    }
+
+    @Override
+    public void releaseAccount(Account.AccountId accountId) {
+        //do nothing
     }
 }

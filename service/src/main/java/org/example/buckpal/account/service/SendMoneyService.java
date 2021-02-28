@@ -1,11 +1,11 @@
-package org.example.buckpal.account.application.service;
+package org.example.buckpal.account.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.buckpal.account.domain.Account;
 import org.example.buckpal.account.port.in.SendMoneyCommand;
 import org.example.buckpal.account.port.in.SendMoneyUseCase;
-import org.example.buckpal.account.application.service.exception.ThresholdExceedException;
-import org.example.buckpal.account.application.service.property.MoneyTransferProperties;
+import org.example.buckpal.account.service.exception.ThresholdExceedException;
+import org.example.buckpal.account.service.property.MoneyTransferProperties;
 import org.example.buckpal.account.common.UseCase;
 import org.example.buckpal.account.port.out.AccountLock;
 import org.example.buckpal.account.port.out.LoadAccountPort;
@@ -29,7 +29,7 @@ public class SendMoneyService implements SendMoneyUseCase {
 
         checkThreshold(command);
 
-        LocalDateTime baselineDate = LocalDateTime.now().minusDays(10);
+        LocalDateTime baselineDate = LocalDateTime.now().minusDays(365);
 
         Account sourceAccount = loadAccountPort.loadAccount(command.getSourceAccountId(), baselineDate);
         Account targetAccount = loadAccountPort.loadAccount(command.getTargetAccountId(), baselineDate);

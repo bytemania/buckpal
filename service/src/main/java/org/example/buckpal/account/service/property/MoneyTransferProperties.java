@@ -1,4 +1,4 @@
-package org.example.buckpal.account.application.service.property;
+package org.example.buckpal.account.service.property;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
