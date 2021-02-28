@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service</artifactId>
+    <artifactId>persistence-adapter</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,13 +19,13 @@
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>port-in</artifactId>
+            <artifactId>port-out</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>port-out</artifactId>
+            <artifactId>domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -47,22 +47,28 @@
         </dependency>
 
         <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
 
-            <exclusions>
-                <exclusion>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                </exclusion>
-            </exclusions>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito.junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -78,6 +84,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
