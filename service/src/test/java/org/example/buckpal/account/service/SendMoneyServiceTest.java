@@ -35,7 +35,7 @@ class SendMoneyServiceTest {
    private final SendMoneyService sendMoneyService = new SendMoneyService(loadAccountPort, accountLock, updateAccountStatePort,
            new MoneyTransferProperties(Money.of(1000)));
 
-   @DisplayName("Should fail if the amount to transfer excceed the limit")
+   @DisplayName("Should fail if the amount to transfer exceed the limit")
    @Test
    void transferExceedLimit() {
       SendMoneyCommand command = SendMoneyCommand.of(Account.AccountId.of(1L), Account.AccountId.of(2L), Money.of(10_000L));
